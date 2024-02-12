@@ -1052,6 +1052,8 @@ img{
   padding-top: 27px;
   max-width: 500px;
   margin: 0 auto;
+
+  align-items:center;
 }
 
 .p-line__list li:nth-of-type(n+3){
@@ -1067,6 +1069,12 @@ img{
   font-size: 3.46vw;
   padding: 12px 5px 10px;
   border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  height: 60px;
 }
 
 .p-line__text{
