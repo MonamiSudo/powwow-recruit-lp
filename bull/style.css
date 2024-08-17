@@ -514,6 +514,9 @@ img{
 }
 
 .p-header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -533,7 +536,35 @@ img{
 
 
 .p-header__button{
-  display: none;
+  position: relative;
+  display: block;
+  font-size: 1.125rem;
+  padding: 14px 50px;
+  background-color: #C83651;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 100vh;
+  transition: all .3s;
+  letter-spacing: 0.02em;
+  text-indent: 0.02em;
+  padding: 6px 28px;
+  font-size: 15px;
+}
+
+.p-header__button::after{
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 13px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #ffffff;
+  border-right: 0;
 }
 
 .p-fv__right{
@@ -567,7 +598,7 @@ img{
     display: block;
     font-size: 1.125rem;
     padding: 14px 50px;
-    background-color: #06C755;
+    background-color: #C83651;
     color: #fff;
     text-decoration: none;
     border-radius: 100vh;
@@ -604,10 +635,7 @@ img{
     max-width: 1200px;
     padding: 0 50px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     height: 80px;
-    align-items: center;
     background-color: #F8E4E6;
   }
 
@@ -1069,8 +1097,8 @@ img{
 }
 
 .p-line__item{
-  background-color: #C83651;
-  color: #fff;
+  background-color: #F8E4E6;
+  color: #5e5565;
   width: 44%;
   text-align: center;
   margin: 0 3%;
@@ -1127,7 +1155,7 @@ img{
 
 .p-line__buttonWrap{
   position: relative;
-  padding-top: 47px;
+  padding-top: 16px;
   display: flex;
   justify-content: center;
   max-width: 320px;
@@ -1146,6 +1174,12 @@ img{
   display: inline-block;
   width: 79%;
   max-width: 253px;
+  background-color: #C83651;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 8px;
 }
 
 .p-line__img{
@@ -1170,7 +1204,7 @@ img{
     padding: 30px;
   }
   .p-line__inner{
-    padding: 19px 20px 0;
+    padding: 28px 40px;
   }
 
   .p-line__inner.-tab{
@@ -1279,7 +1313,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 19px 40px 0;
+    padding: 28px 40px;
   }
 
   .p-line__inner.-tab{
@@ -1332,7 +1366,7 @@ img{
     content: "";
     position: absolute;
     top: 0px;
-    left: 182px;
+    left: 133px;
     transform: translateX(-50%);
     width: 37px;
     height: 40px;
@@ -1346,7 +1380,7 @@ img{
     content: "";
     position: absolute;
     top: 38px;
-    right: 84px;
+    right: 37px;
     transform: translateX(-50%);
     width: 37px;
     height: 40px;
@@ -2262,4 +2296,138 @@ img{
 
 .u-color__red{
   color: #C83651;
+}
+
+/* ============================================== */
+/* フォーム部分CSS */
+/* ============================================== */
+
+.p-contact__form {
+  padding: 40px 0;
+}
+
+.p-contact__list {
+  margin-top: 28px;
+}
+
+.p-contact__list-title {
+  margin-bottom: 4px;
+}
+
+.p-contact__list-title-main {
+
+}
+
+.p-contact__list-title-note {
+  background-color: #C83651;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.p-contact__list-text {
+  position: relative;
+}
+
+.p-contact__list-text input,
+.p-contact__list-text select,
+.p-contact__list-text textarea {
+  width: 100%;
+  color: #5e5565;
+  padding: 4px;
+  font-weight: normal;
+}
+
+.p-contact__list-text.birthday select{
+  width: 30%;
+}
+
+.p-contact__btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.p-contact__btn span input {
+  padding: 10px 80px;
+  border: 1px solid #C83651;
+  background-color: #C83651;
+  color: #fff;
+  border-radius: 4px;
+  transition: all .4s
+}
+
+.p-contact__btn span input:hover {
+  color: #C83651;
+  background-color: #fff;
+}
+
+.error {
+  opacity: 0;
+  background: #C83651;
+  color: #fff;
+  min-width: 120px;
+  font-size: 11px;
+  border: 2px solid #ddd;
+  box-shadow: 0 0 6px #000;
+  padding: 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  z-index: -1;
+  top: -20px;
+  right: 0px;
+}
+
+.error.show {
+  opacity: 0.85;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  z-index: 2;
+  opacity: 0.85;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  z-index: 2;
+}
+
+/* ============================================== */
+/* 確認ページ */
+/* ============================================== */
+.p-contact.confirmpage {
+  padding-top: 40px;
+}
+
+@media screen and (min-width:768px){
+  .p-contact.confirmpage {
+    padding-top: 80px;
+  }
+}
+
+.p-contact__list-text.confirm-page {
+  border-bottom: 1px solid #5e5565;
+  padding-bottom: 4px;
+}
+
+/* ============================================== */
+/* サンクスページ */
+/* ============================================== */
+
+@media screen and (min-width:768px){
+  .p-contact.thankspage {
+    padding-top: 80px;
+  }
+}
+
+.p-contact-thanks-text {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width:768px){
+  .p-contact-thanks-text {
+    margin-top: 60px;
+  }
 }

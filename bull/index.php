@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('php/form.php');
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns#">
@@ -11,7 +16,7 @@
   <meta property="og:title" content="女性のための整体サロンで一緒に働きませんか？ウィメンズヘルスケアサロン パウワウ">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://powwow-ginza.com/recruit/">
-  <meta property="og:image" content="https://powwow-ginza.com/recruit/img/ogp.jpg?ver=20240515">
+  <meta property="og:image" content="https://powwow-ginza.com/recruit/img/ogp.jpg?ver=20240817">
   <!-- 以下省略可能ですが、site_name, description, localeは載せたほうがいいです。 -->
   <meta property="og:site_name" content="女性のための整体サロンで一緒に働きませんか？ウィメンズヘルスケアサロン パウワウ">
   <meta property="og:description" content="ウィメンズヘルスケアサロンは、整体師が全員女性、駅近な店舗、百貨店にも多く出店し、女性が働きやすいサロンです。20年以上の歴史があり、充実した研修制度を受けることで、どんな方でも高い技術力を習得できます。気になる方は、LINEから簡単に応募できます。">
@@ -24,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./style.css?ver=20240401">
+  <link rel="stylesheet" href="./style.css?ver=20240817.1">
 
   <!-- no index -->
   <meta name="robots" content="noindex">
@@ -77,11 +82,9 @@
   <header class="l-header p-header">
     <div class="p-header__inner">
       <h1 class="p-header__logo">
-        <a class="p-header__logo-link" href="#"><img src="img/logo-powwow.png" alt="POWWOW"></a>
+        <a class="p-header__logo-link" href="/recruit/bull/"><img src="img/logo-powwow.png" alt="POWWOW"></a>
       </h1>
-      <a href="https://lin.ee/DGTeuzp" target="_blank" onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'pcヘッダー'})" class="p-header__button">
-        LINE<span class="-fzs">で気軽に応募</span>
-      </a>
+      <a href="#recruit-form" class="p-header__button">エントリーはこちら</a>
     </div>
   </header>
   <main>
@@ -172,36 +175,7 @@
         </div>
       </div>
     </section>
-    <section class="p-line">
-      <div class="p-line__inner">
-        <ul class="p-line__list u-show__tab">
-          <li class="p-line__item">女性専門</li>
-          <li class="p-line__item">安心のブランド</li>
-          <li class="p-line__item">完全週休2日</li>
-        </ul>
-        <div class="p-line__inner -tab">
-          <div class="p-line__left">
-            <ul class="p-line__list u-show__notTab">
-              <li class="p-line__item">女性専門サロン</li>
-              <li class="p-line__item">安心のブランド</li>
-              <li class="p-line__item">完全週休2日</li>
-            </ul>
-            <p class="p-line__text">女性専門の整体師として<br class="u-show__sp">活躍したいあなたへ</p>
-            <h2 class="p-line__title">わたしたちと一緒に<br>女性の笑顔を増やしませんか？</h2>
-            <div class="p-line__buttonWrap">
-              <!-- <img src="img/line-img01-sp.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__sp">
-                  <img src="img/line-img01-pc.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__pc"> -->
-              <a href="https://lin.ee/DGTeuzp" target="_blank"
-                onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'エリア1'})" class="p-line__button">
-                <img src="img/line-button-sp.png" alt="まずはLINEから応募する" class="u-show__sp">
-                <img src="img/line-button-pc.png" alt="まずはLINEから応募する" class="u-show__pc">
-              </a>
-            </div>
-          </div>
-          <img src="img/powwow-staff.jpg" alt="ウィメンズヘルスケアリスト" class="p-line__img">
-        </div>
-      </div>
-    </section>
+    <?php include('component/cta.php'); ?>
     <section>
       <div class="u-show__sp">
         <picture>
@@ -317,36 +291,7 @@
         </figure>
       </div>
     </section>
-    <section class="p-line">
-      <div class="p-line__inner">
-        <ul class="p-line__list u-show__tab">
-          <li class="p-line__item">女性専門サロン</li>
-          <li class="p-line__item">安心の</li>
-          <li class="p-line__item">完全週休2日</li>
-        </ul>
-        <div class="p-line__inner -tab">
-          <div class="p-line__left">
-            <ul class="p-line__list u-show__notTab">
-              <li class="p-line__item">女性専門サロン</li>
-              <li class="p-line__item">安心のブランド</li>
-              <li class="p-line__item">完全週休2日</li>
-            </ul>
-            <p class="p-line__text">女性専門の整体師として<br class="u-show__sp">活躍したいあなたへ</p>
-            <h2 class="p-line__title">わたしたちと一緒に<br>女性の笑顔を増やしませんか？</h2>
-            <div class="p-line__buttonWrap">
-              <!-- <img src="img/line-img01-sp.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__sp">
-                  <img src="img/line-img01-pc.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__pc"> -->
-              <a href="https://lin.ee/DGTeuzp" target="_blank"
-                onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'エリア2'})" class="p-line__button">
-                <img src="img/line-button-sp.png" alt="まずはLINEから応募する" class="u-show__sp">
-                <img src="img/line-button-pc.png" alt="まずはLINEから応募する" class="u-show__pc">
-              </a>
-            </div>
-          </div>
-          <img src="img/powwow-staff.jpg" alt="ウィメンズヘルスケアリスト" class="p-line__img">
-        </div>
-      </div>
-    </section>
+    <?php include('component/cta.php'); ?>
     <section class="p-sec05">
       <h2 class="p-title">募集要項（正社員）</h2>
         <dl class="p-description__list">
@@ -633,38 +578,148 @@
         </dl>
       </div>
     </section>
-    <section class="p-line">
-      <div class="p-line__inner">
-          <ul class="p-line__list u-show__tab">
-            <li class="p-line__item">女性専門サロン</li>
-            <li class="p-line__item">安心のブランド</li>
-            <li class="p-line__item">完全週休2日</li>
-          </ul>
-        <div class="p-line__inner -tab">
-          <div class="p-line__left">
-            <ul class="p-line__list u-show__notTab">
-              <li class="p-line__item">女性専門サロン</li>
-              <li class="p-line__item">安心のブランド</li>
-              <li class="p-line__item">完全週休2日</li>
-            </ul>
-            <p class="p-line__text">女性専門の整体師として<br class="u-show__sp">活躍したいあなたへ</p>
-            <h2 class="p-line__title">わたしたちと一緒に<br>女性の笑顔を増やしませんか？</h2>
-            <div class="p-line__buttonWrap">
-              <!-- <img src="img/line-img01-sp.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__sp">
-              <img src="img/line-img01-pc.png" alt="笑顔の女性のイラスト" class="p-line__button-img u-show__pc"> -->
-              <a href="https://lin.ee/DGTeuzp" target="_blank" onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'エリア3'})" class="p-line__button">
-                <img src="img/line-button-sp.png" alt="まずはLINEから応募する" class="u-show__sp">
-                <img src="img/line-button-pc.png" alt="まずはLINEから応募する" class="u-show__pc">
-              </a>
-            </div>
+    <?php include('component/cta.php'); ?>
+    <section id="recruit-form" class="">
+      <h2 class="p-title">応募フォーム</h2>
+      <div class="l-container">
+        <form class="p-contact__form" action="./form-confirm.php" method="post">
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">氏名</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <input type="text" name="onamae" id="name" value="<?php if(!empty($_POST['onamae'])){echo $_POST['onamae'];} ?>" placeholder="パウワウ花子" class="validate">
+              <span class="error">* 氏名をご入力ください</span>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">ふりがな</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <input type="text" name="kana" id="kana" value="<?php if(!empty($_POST['kana'])){echo $_POST['kana'];} ?>" placeholder="ぱうわうはなこ" class="validate">
+              <span class="error">* ふりがなをご入力ください</span>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">生年月日</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text birthday">
+              <select name="calendar" id="calendar" class="validate">
+                <?php foreach($calendars as $calendar){ ?>
+                  <option value="<?php echo $calendar; ?>"<?php if((empty($_POST['calendar']) && $calendar=='選択してください') || (!empty($_POST['calendar']) && $_POST['calendar']==$calendar)){echo ' selected';} ?>><?php echo $calendar; ?></option>
+                <?php } ?>
+              </select>
+              <select name="month" id="month" class="validate">
+                <?php foreach($months as $month){ ?>
+                  <option value="<?php echo $month; ?>"<?php if((empty($_POST['month']) && $month=='選択してください') || (!empty($_POST['month']) && $_POST['month']==$month)){echo ' selected';} ?>><?php echo $month; ?></option>
+                <?php } ?>
+              </select>
+              <select name="day" id="day" class="validate">
+                <?php foreach($days as $day){ ?>
+                  <option value="<?php echo $day; ?>"<?php if((empty($_POST['day']) && $day=='選択してください') || (!empty($_POST['day']) && $_POST['day']==$day)){echo ' selected';} ?>><?php echo $day; ?></option>
+                <?php } ?>
+              </select>
+              <span class="error">* 生年月日をご入力ください</span>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">メールアドレス</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <input type="mail" name="mail" id="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];} ?>" placeholder="recruit@powwow.com" class="validate">
+              <span class="error">* メールアドレスをご入力ください</span>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+                <span class="p-contact__list-title-main">携帯番号</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <input type="tel" name="tel" id="tel" value="<?php if(!empty($_POST['tel'])){echo $_POST['tel'];} ?>" placeholder="000-0000-0000" class="validate">
+              <span class="error">* 電話番号をご入力ください</span>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">正社員・アルバイトどちらを希望ですか？</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <select name="working">
+                <?php foreach($workings as $working){ ?>
+                  <option value="<?php echo $working; ?>"<?php if((empty($_POST['working']) && $working=='選択してください') || (!empty($_POST['working']) && $_POST['working']==$working)){echo ' selected';} ?>><?php echo $working; ?></option>
+                <?php } ?>
+              </select>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">どのようにパウワウサロンの求人を知りましたか？</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <select name="channel">
+                <?php foreach($channels as $channel){ ?>
+                  <option value="<?php echo $channel; ?>"<?php if((empty($_POST['channel']) && $channel=='選択してください') || (!empty($_POST['channel']) && $_POST['channel']==$channel)){echo ' selected';} ?>><?php echo $channel; ?></option>
+                <?php } ?>
+              </select>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">経験のある職種は何ですか？</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <select name="occupation">
+                <?php foreach($occupations as $occupation){ ?>
+                  <option value="<?php echo $occupation; ?>"<?php if((empty($_POST['occupation']) && $occupation=='選択してください') || (!empty($_POST['occupation']) && $_POST['occupation']==$occupation)){echo ' selected';} ?>><?php echo $occupation; ?></option>
+                <?php } ?>
+              </select>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">経験は何年ですか？</span><span class="p-contact__list-title-note">必須</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <select name="experience">
+                <?php foreach($experiences as $experience){ ?>
+                  <option value="<?php echo $experience; ?>"<?php if((empty($_POST['experience']) && $experience=='選択してください') || (!empty($_POST['experience']) && $_POST['experience']==$experience)){echo ' selected';} ?>><?php echo $experience; ?></option>
+                <?php } ?>
+              </select>
+            </dd>
+          </dl>
+
+          <dl class="p-contact__list">
+            <dt class="p-contact__list-title">
+              <span class="p-contact__list-title-main">その他</span>
+            </dt>
+            <dd class="p-contact__list-text">
+              <textarea name="other" rows="6" placeholder="その他質問事項があれば記入してください"><?php if(!empty($_POST['other'])){echo $_POST['other'];} ?></textarea>
+            </dd>
+          </dl>
+
+          <div class="p-contact__btn">
+            <span><input type="submit" id="confirmBtn" name="submit" value="確認画面へ"></span>
           </div>
-          <img src="img/powwow-staff.jpg" alt="ウィメンズヘルスケアリスト" class="p-line__img">
-        </div>
+          <input type="hidden" name="token" value="<?php echo h($_SESSION['token']); ?>">
+          <input type="hidden" name="mode" value="to_confirm">
+        </form>
       </div>
     </section>
-    <a href="https://lin.ee/DGTeuzp" target="_blank" onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'エリア1'})" class="p-foot__button">
+    <!-- <a href="" target="_blank" onclick="gtag('event', 'click', {'event_category': '採用', 'event_label': 'エリア1'})" class="p-foot__button">
       <img src="img/foot-button-sp.png" alt="まずはLINEから応募する">
-    </a>
+    </a> -->
   </main>
   <footer class="p-footer">
     <div class="p-footer__inner l-container">
@@ -678,5 +733,8 @@
     </div>
     <p class="p-footer__copy"><small>&copy; 2023 SMILE CREATE GROUP.</small></p>
   </footer>
+
+  <?php echo $js; ?>
+
 </body>
 </html>
