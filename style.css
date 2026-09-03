@@ -1178,6 +1178,7 @@ img{
     align-items: flex-end;
     justify-content: space-between;
     padding: 0;
+    align-items: center;
   }
 
   .p-line__left{
@@ -1534,7 +1535,7 @@ img{
 
 .p-description__list{
   width: 89.6%;
-  margin: 51px auto 0;
+  margin: 0 auto 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1563,6 +1564,10 @@ img{
   align-items: center;
 }
 
+.p-description__item .mb {
+  margin-bottom: 24px;
+}
+
 .p-description__note{
   margin-top: 1em;
   font-size: 0.6875rem;
@@ -1582,7 +1587,7 @@ img{
 @media screen and (min-width:768px){
   .p-description__list{
     max-width: 768px;
-    margin-top: 65px;
+    /* margin-top: 65px; */
   }
 
   .p-description__title{
@@ -2027,7 +2032,7 @@ img{
 }
 
 .p-manager__img{
-  width: 38%;
+  width: 60%;
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.16));
 }
 
@@ -2043,6 +2048,10 @@ img{
     max-width: 642px;
     margin: 60px auto 0;
     padding: 34px 0;
+  }
+
+  .p-manager__img { 
+    width: 38%;
   }
 
   .p-manager__fzm{
@@ -2262,4 +2271,188 @@ img{
 
 .u-color__red{
   color: #C83651;
+}
+
+
+/* edit */
+:root{
+  --brand:#c6404f;         /* ヘッダー/アクセント（赤系） */
+  --brand-dark:#b43645;
+  --soft:#f8e3e6;          /* 左ラベル背景（淡いピンク） */
+  --line:#c6404f;          /* 罫線 */
+  --text:#3a3a3a;
+  --muted:#6b6b6b;
+  --bg:#ffffff;
+}
+
+.recruit{
+  background: var(--bg);
+  padding: 40px 16px 56px;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+}
+
+.p-recruit-info__title {
+  margin-bottom: 40px;
+}
+
+.recruit-tabs__description {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Tabs */
+.recruit-tabs{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 0 40px;
+}
+
+.recruit-tabs__tab{
+  appearance: none;
+  border: 1px solid var(--brand);
+  background: #fff;
+  color: var(--brand);
+  font-weight: 700;
+  padding: 12px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, transform .05s ease;
+  line-height: 1.2;
+}
+
+.recruit-tabs__tab:hover{
+  background: rgba(198,64,79,.06);
+}
+
+.recruit-tabs__tab:active{
+  transform: translateY(1px);
+}
+
+.recruit-tabs__tab:focus-visible{
+  outline: 3px solid rgba(198,64,79,.25);
+  outline-offset: 2px;
+}
+
+.recruit-tabs__tab.is-active{
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+/* Panels container (罫線の雰囲気) */
+.recruit-panels{
+  padding: 0;
+}
+
+.recruit-panel{
+  display: none;
+}
+.recruit-panel.is-active{
+  display: block;
+}
+
+.p-recruit-info__nav-text {
+  max-width: 768px;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+/* Spec layout (画像のような左ラベル + 右本文) */
+.recruit-spec{
+  margin: 0;
+}
+
+.recruit-spec__row{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-bottom: 1px solid rgba(198,64,79,.25);
+  min-height: 84px;
+}
+.recruit-spec__row:last-child{
+  border-bottom: none;
+}
+
+.recruit-spec__label{
+  margin: 0;
+  background: var(--soft);
+  color: var(--brand);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  padding: 18px 14px;
+  letter-spacing: .06em;
+}
+
+.recruit-spec__value{
+  margin: 0;
+  padding: 18px 18px;
+  color: var(--text);
+}
+
+.recruit-spec__group{
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.recruit-spec__list{
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--text);
+}
+
+.recruit-spec__list li{
+  margin: 0 0 4px;
+}
+
+.recruit-spec__note{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .recruit-tabs{
+    grid-template-columns: 1fr;
+  }
+  .recruit-spec__row{
+    grid-template-columns: 1fr;
+  }
+  .recruit-spec__label{
+    place-items: start;
+    padding: 12px 14px;
+  }
+}
+
+/* ----------------------------- */
+/* p-recruit-manager__container */
+/* ----------------------------- */
+.p-recruit-manager__container {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.p-recruit-manager__name {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.p-recruit-manager__text-wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.p-recruit-manager__text {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 2;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.p-recruit-manager__text .mb {
+  margin-bottom: 16px;
 }
